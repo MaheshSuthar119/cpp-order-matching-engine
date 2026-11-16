@@ -13,6 +13,13 @@ add_executable(order_matching_engine
     src/main.cpp
 )
 
+# Use target_include_directories for header paths
+target_include_directories(order_matching_engine
+    PRIVATE
+    include
+)
+
+# Use target_compile_options for compiler warning flags
 target_compile_options(order_matching_engine
     PRIVATE
     -Wall

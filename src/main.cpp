@@ -2,20 +2,32 @@
 #include "matching/order.hpp"
 
 int main(){
-    matching::Order order{
+    // Test 1: BUY Order
+    matching::Order buyOrder{
         1001,
         matching::Side::Buy,
         10025,
         10
     };
-    if(order.side == matching::Side::Buy){
-        std::cout << "Order is a Buy order.\n";
-        std::cout << "Order ID: " << order.orderId << "\n";
-        std::cout << "Price: " << order.price << "\n";
-        std::cout << "Quantity: " << order.quantity << "\n";
-    }
-    else{
-        std::cout << "Order is a Sell order.\n";
-    }
+
+    std::cout << "===== BUY ORDER =====\n";
+    std::cout << "Order ID: " << buyOrder.orderId << '\n';
+    std::cout << "Side: BUY\n";
+    std::cout << "Price: " << buyOrder.price << " paise\n";
+    std::cout << "Quantity: " << buyOrder.quantity << '\n';
+
+    // Test 2: SELL Order
+    matching::Order sellOrder{
+        1002,
+        matching::Side::Sell,
+        10100,
+        5
+    };
+
+    std::cout << "\n===== SELL ORDER =====\n";
+    std::cout << "Order ID: " << sellOrder.orderId << '\n';
+    std::cout << "Side: SELL\n";
+    std::cout << "Price: " << sellOrder.price << " paise\n";
+    std::cout << "Quantity: " << sellOrder.quantity << '\n';
     return 0;
 }
